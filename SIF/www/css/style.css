@@ -1,0 +1,71 @@
+/* Empty. Add your own CSS if you like */
+.tabs .tab-item .icon.strength {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/strength.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.strengthSelected {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/strengthSelected.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.cardio {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/cardio.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.cardioSelected {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/cardioSelected.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.flexibility {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/flexibility.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.flexibilitySelected {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/flexibilitySelected.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.face {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/face.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.faceSelected {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/faceSelected.png');
+  background-size:contain;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
