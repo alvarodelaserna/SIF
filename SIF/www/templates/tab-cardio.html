@@ -4,8 +4,8 @@
         <div class="card" ng-repeat="video in videos.cardio">
             <ion-item>
                 <i class="icon ion-ios-heart" style="font-size: 30px; color: #ff3366"></i>
+                <h2>{{video.title}}</h2>
                 <div class="video-container">
-                    <h2>{{video.title}}</h2>
                     <iframe width="100%" height="100%" src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
                 </div>
             </ion-item>
