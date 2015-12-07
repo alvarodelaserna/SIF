@@ -17,6 +17,10 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('VideosCtrl', function($scope, $stateParams, Videos) {
+  $scope.videos = Videos.all();
+})
+
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })

@@ -1,27 +1,42 @@
 <ion-view view-title="Flexibility">
   <ion-content class="padding">
     <ion-list>
-        <div class="card">
+        <div class="card" ng-repeat="video in videos.flexibility">
             <ion-item>
+                <i class="icon ion-ios-heart" style="font-size: 30px; color: #ff3366"></i>
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/KJaWIBg15n0" frameborder="0" width="560" height="315"></iframe>
+                    <h2>{{video.title}}</h2>
+                    <iframe width="100%" height="100%" src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </ion-item>
+        </div>
+        <!-- <div class="card">
+            <ion-item>
+                <i class="icon ion-ios-heart-outline" style="font-size: 30px; color: #ff3366"></i>
+                <div class="video-container">
+                    <h2>Total Body Stretch - Flexibility Exercises for the Entire Body</h2>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KJaWIBg15n0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </ion-item>
         </div>
         <div class="card">
             <ion-item>
+                <i class="icon ion-ios-heart" style="font-size: 30px; color: #ff3366"></i>
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/qC7960yMaxA" frameborder="0" width="560" height="315"></iframe>
+                    <h2>12 Minute Splits Stretch Flexibility Workout For Beginners How To Tutorial For The Splits</h2>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qC7960yMaxA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </ion-item>
         </div>
         <div class="card">
             <ion-item>
+                <i class="icon ion-ios-heart-outline" style="font-size: 30px; color: #ff3366"></i>
                 <div class="video-container">
-                    <iframe src="http://www.youtube.com/embed/qZTGgEWPbLk" frameborder="0" width="560" height="315"></iframe>
+                    <h2>Full Body Stretching Exercises | Flexibility Workout | Class FitSugar</h2>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qZTGgEWPbLk?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </div>
             </ion-item>
-        </div>
+        </div> -->
     </ion-list>
   </ion-content>
 </ion-view>

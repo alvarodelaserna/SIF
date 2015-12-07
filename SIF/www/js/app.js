@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-cardio': {
         templateUrl: 'templates/tab-cardio.html',
-        controller: 'DashCtrl'
+        controller: 'VideosCtrl as vm'
       }
     }
   })
@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-strength': {
         templateUrl: 'templates/tab-strength.html',
-        controller: 'DashCtrl'
+        controller: 'VideosCtrl as vm'
       }
     }
   })
@@ -65,7 +65,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-flexibility': {
         templateUrl: 'templates/tab-flexibility.html',
-        controller: 'DashCtrl'
+        controller: 'VideosCtrl as vm'
       }
     }
   })
@@ -89,17 +89,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   //     }
   //   })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });
+  // .state('tab.account', {
+  //   url: '/account',
+  //   views: {
+  //     'tab-account': {
+  //       templateUrl: 'templates/tab-account.html',
+  //       controller: 'AccountCtrl'
+  //     }
+  //   }
+  // });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/cardio');
+
+  $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
 
 });
