@@ -41,6 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each tab has its own nav history stack:
 
   .state('tab.cardio', {
+    cache: false,
     url: '/cardio',
     views: {
       'tab-cardio': {
