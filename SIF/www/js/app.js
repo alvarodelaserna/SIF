@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.services', 'services.api', 'ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,6 +20,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    var token = localStorage.getItem('token');
+    if (token != null) {
+      if (ionic.Platform.isIOS()) {
+        window.touchid.authenticate(function() {
+          $state.go('tab.cardio');
+        }, function() {
+          alert("Error during authentication, try again.");
+        }, "touch ID");
+      } else {
+        $state.go('tab.cardio');
+      }
+    }else{
+      $state.go('login');
+    }
   });
 })
 
@@ -31,6 +45,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+  .state('login', {
+    cache: false,
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl as vm'
+  })
   // setup an abstract state for the tabs directive
   .state('tab', {
     url: '/tab',
@@ -52,6 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   .state('tab.strength', {
+    cache: false,
     url: '/strength',
     views: {
       'tab-strength': {
@@ -62,6 +83,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   .state('tab.flexibility', {
+    cache: false,
     url: '/flexibility',
     views: {
       'tab-flexibility': {
@@ -71,15 +93,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  // .state('tab.chats', {
-  //     url: '/chats',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'templates/tab-chats.html',
-  //         controller: 'ChatsCtrl'
-  //       }
-  //     }
-  //   })
+
   //   .state('tab.chat-detail', {
   //     url: '/chats/:chatId',
   //     views: {
@@ -101,7 +115,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/cardio');
+  $urlRouterProvider.otherwise('/login');
 
   $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
 

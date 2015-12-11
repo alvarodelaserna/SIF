@@ -53,7 +53,8 @@ angular.module('starter.services', [])
         url: 'https://www.youtube.com/embed/qZTGgEWPbLk?rel=0&amp;showinfo=0'
       }
     ]
-  };
+  }
+  
   return {
     all: function() {
       return videos;

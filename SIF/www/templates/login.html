@@ -1,0 +1,16 @@
+<ion-view view-title="Sign-In">
+    <ion-content>
+      <div style="text-align: center;">
+        <i class="ion-android-contact ico" style="font-size: 40px;"></i>
+        <input style="width:100%;text-align: center;" ng-model="vm.user.email" type="text" name="email" placeholder="Email" />
+        <input style="width:100%;text-align: center;" ng-model="vm.user.password" type="password" name="password" placeholder="Password" />
+        <input class="button button-block button-positive" type="submit" value="Sign In" ng-click="vm.submit();" />
+      </div>
+      <p class="text-center">
+        Not a member yet? <a href="#">Sign Up</a>
+      </p>
+      <p class="text-center">
+        <a href="#">Forgot password?</a>
+      </p>
+    </ion-content>
+</ion-view>
